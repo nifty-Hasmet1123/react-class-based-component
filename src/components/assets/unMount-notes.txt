@@ -1,0 +1,55 @@
+When to use componentWillUnmount?
+
+
+The `componentWillUnmount` lifecycle method is used in React class components to perform cleanup tasks just before a component is unmounted and removed from the DOM. It's an appropriate place to do things like:
+
+1. **Removing Event Listeners:** You can use `componentWillUnmount` to remove event listeners that were added in the `componentDidMount` method to prevent memory leaks and unexpected behavior.
+
+   ```javascript
+   componentDidMount() {
+     window.addEventListener("resize", this.handleResize);
+   }
+
+   componentWillUnmount() {
+     window.removeEventListener("resize", this.handleResize);
+   }
+   ```
+
+2. **Clearing Timers and Intervals:** If you have set up timers or intervals using `setTimeout` or `setInterval` in the component, `componentWillUnmount` is a good place to clear them to prevent them from running after the component is unmounted.
+
+   ```javascript
+   componentDidMount() {
+     this.interval = setInterval(this.someFunction, 1000);
+   }
+
+   componentWillUnmount() {
+     clearInterval(this.interval);
+   }
+   ```
+
+3. **Cleaning Up External Resources:** If your component uses external resources like WebSockets, subscriptions, or connections to third-party libraries, you can use `componentWillUnmount` to close or disconnect from those resources.
+
+   ```javascript
+   componentDidMount() {
+     this.websocket = new WebSocket("ws://example.com");
+     this.websocket.addEventListener("message", this.handleMessage);
+   }
+
+   componentWillUnmount() {
+     this.websocket.close();
+   }
+   ```
+
+4. **Reverting Side Effects:** If you made changes to the DOM or application state in the `componentDidMount` method, you can use `componentWillUnmount` to revert those changes.
+
+   ```javascript
+   componentDidMount() {
+     document.body.style.backgroundColor = "lightblue";
+   }
+
+   componentWillUnmount() {
+     document.body.style.backgroundColor = "";
+   }
+   ```
+
+`componentWillUnmount` is a critical part of resource management and preventing memory leaks in your React applications. It's a good practice to clean up any resources and side effects that are associated with a component before it is unmounted.

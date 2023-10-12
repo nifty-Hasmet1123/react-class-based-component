@@ -1,0 +1,115 @@
+body {
+    background-color: black;
+}
+
+.countSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerCountComponent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.countComponent {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    /* margin-left: 10px; */
+    gap: 10px;
+    background-color: aliceblue;
+    height: 40px
+}
+
+.countComponent > 
+.countButtons, 
+.countSpan {
+    height: 30px;
+    margin-top: 6px;
+}
+
+.countSpan {
+    font-weight: 900;
+}
+
+.p-iterable {
+    color: white;
+}
+
+
+/* MountingPhaseComponent */
+
+.aside-C,
+.cAs
+{
+    font-style: italic;
+}
+
+.articleMountPhase {
+    margin: 1em;
+}
+
+.artPara {
+    font-size: 18px;
+}
+
+.mt-article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    /* grid-template-rows: 1fr; */
+    gap: 2px;
+}
+
+.articleStyling {
+    background-color: rgba(211, 61, 203, 0.667);
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+.articleStyling > h2 {
+    text-align: center;
+}
+
+
+/* UpdatingPhase component */
+
+
+.footer-style {
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+}
+
+.aside-cl {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.h4-text-alignment {
+    text-align: center;
+}
+
+.fieldSet {
+    width: fit-content;
+}
+
+.legendFs {
+    text-align: center;
+}
+
+.fieldSet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.fieldsetBox {
+    display: flex;
+    justify-content: center;
+}
+
